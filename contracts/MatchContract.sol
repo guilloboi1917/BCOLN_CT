@@ -78,6 +78,8 @@ contract MatchContract {
         m.player2 = opponent;
         m.stakeAmount = stake;
         m.revealDeadline = block.timestamp + REVEAL_PERIOD;
+        m.status = MatchStatus.Commit; // Explicitly set to Commit phase
+
         
         emit MatchCreated(matchId, msg.sender, opponent);
     }
